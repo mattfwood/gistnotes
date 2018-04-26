@@ -4,7 +4,7 @@ import brace from 'brace';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
-import 'brace/theme/github';
+import 'brace/theme/monokai';
 
 class Gist extends Component {
   state = {
@@ -42,11 +42,13 @@ class Gist extends Component {
         <a href={file.raw_url}>{file.filename}</a>
         <AceEditor
           mode={language}
-          theme="github"
           onChange={this.onChange}
           name="UNIQUE_ID_OF_DIV"
           value={code}
+          fontSize={14}
           editorProps={{ $blockScrolling: true }}
+          theme="monokai"
+          highlightActiveLine
         />
       </div>
     );
